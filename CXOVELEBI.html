@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #e3e3e3;
+        margin: 0;
+        padding: 0;
+    }
+
+    .centered-section {
+        text-align: center;
+        padding: 50px;
+        background-color: #241f1f;
+        margin: 100px auto;
+        width: 50%;
+        box-shadow: 0px 0px 20px rgba(228, 220, 220, 0.1);
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    h1 {
+        background-color: rgb(188, 167, 167);
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    ul li {
+        margin: 5px 0;
+    }
+
+    ul li a {
+        text-decoration: none;
+        color: #484849;
+    }
+
+    ul li a:hover {
+        text-decoration: underline;
+    }
+
+    form {
+        margin: 20px 0;
+    }
+
+    form label {
+        display: block;
+        margin: 10px 0 5px;
+    }
+
+    form input[type="text"],
+    form textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    form button {
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: #422828;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    form button:hover {
+        background-color: #0056b3;
+    }
+
+    .animal-section {
+        margin: 20px 0;
+    }
+
+    .animal-image {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .large-image {
+        display: block;
+        margin: 20px auto;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sccfil.css">
+    <title>WeekspotKT</title>
+</head>
+
+<body>
+    <div id="access-section" style="text-align: center;">
+        <h1>Please Enter Your Username</h1>
+        <form id="access-form">
+            Username: <input type="text" id="username" name="username" required /><br><br>
+            <button type="button" onclick="verifyAccess()">Submit</button>
+        </form>
+    </div>
+
+    <div id="content-section" style="display: none;">
+        <center>
+            <h1>Welcome to Weekspot</h1>
+        </center>
+        <ul>
+            <li><a href="https://en.wikipedia.org/wiki/Dog">Dogs</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Cat">Cats</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Monkey">Monkeys</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Hamster">Hamsters</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Deer">Deer</a></li>
+        </ul>
+
+        <form>
+            Description : <br />
+            <textarea rows="7" cols="50" name="description">
+            Enter description here... You'll read articles about animals. Choose your animal; Dog, Cat, Monkey, Hamster, Deer
+            </textarea>
+        </form>
+        <h1>Heading</h1>
+        <p>These are paragraphs</p>
+        <form>
+            <input type="checkbox" name="Dogs" value="on"> Dogs
+            <input type="checkbox" name="Cats" value="on"> Cats
+            <input type="checkbox" name="Monkeys" value="on"> Monkeys
+            <input type="checkbox" name="Hamsters" value="on"> Hamsters
+            <input type="checkbox" name="Deer" value="on"> Deer
+        </form>
+        <h2>Section First</h2>
+        <p class="First-paragraph">This is the First paragraph</p>
+        <p>This is the second paragraph.</p>
+        <h2>Section Second</h2>
+        <p class="First-paragraph">This is the First paragraph</p>
+        <p>This is the second paragraph</p>
+
+        <div class="Dog">
+            <img src="C:\Users\STUDENT\Desktop\K.Shubladze\Scoobydoo.webp" alt="A dog image" />
+            <p>
+                Dogs are sometimes referred to
+                as man's best friend because they
+                are kept as domestic pets and are
+                usually loyal and like being around
+                humans. They are also helpful in
+                reducing stress, anxiety, and
+                depression, loneliness, encourage
+                exercise and playfulness and even
+                improve your cardiovascular health.
+            </p>
+        </div>
+
+        <div class="Cats">
+            <img class="cats" src="C:\Users\STUDENT\Desktop\K.Shubladze\how-long-do-cats-live.jpg" alt="A Cat image" />
+            <p>
+                The cat (Felis catus), also referred
+                to as the domestic cat or house cat,
+                is a small domesticated carnivorous
+                mammal. It is the only domesticated
+                species of the family Felidae.
+                Advances in archaeology and genetics
+                have shown that the domestication of
+                the cat occurred in the Near East
+                around 7500 BC. It is commonly kept
+                as a pet and farm cat, but also
+                ranges freely as a feral cat avoiding
+                human contact. It is valued by humans
+                for companionship and its ability to
+                kill vermin. Its retractable claws
+                are adapted to killing small prey
+                species such as mice and rats.
+                It has a strong, flexible body,
+                quick reflexes, and sharp teeth,
+                and its night vision and sense of
+                smell are well developed. It is a
+                social species, but a solitary hunter
+                and a crepuscular predator.
+            </p>
+        </div>
+
+        <img id="Scoobydoo" src="C:\Users\STUDENT\Desktop\K.Shubladze\Fallow-deer-dama-dama.webp" alt="Dog" border="0"
+            width="500" height="310" />
+    </div>
+
+    <script>
+        function verifyAccess() {
+            const username = document.getElementById('username').value;
+
+            if (username) {
+                document.getElementById('access-section').style.display = 'none';
+                document.getElementById('content-section').style.display = 'block';
+            } else {
+                alert('Please enter your username.');
+            }
+        }
+    </script>
+</body>
+
+</html>
